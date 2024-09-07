@@ -1,13 +1,12 @@
-import './App.css'
+import MainLayouts from "./layouts/MainLayouts"
 
 function App() {
-  
-
   return (
     <>
-      <h1>Salman farcy</h1>
+     <MainLayouts />
     </>
   )
 }
 
 export default App
+                  
