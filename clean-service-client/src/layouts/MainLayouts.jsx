@@ -1,4 +1,4 @@
-
+import PropTypes from "prop-types"
 
 const MainLayouts = ({children}) => {
   return (
@@ -63,5 +63,11 @@ const MainLayouts = ({children}) => {
     </div>
   );
 };
+
+
+// prop validation
+MainLayouts.propTypes = {
+  children : PropTypes.node,
+}
 
 export default MainLayouts;
