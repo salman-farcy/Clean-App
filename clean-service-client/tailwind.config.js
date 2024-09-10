@@ -5,7 +5,18 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#064663",
+        background:"#635985",
+        textlight: "#ECB365",
+        textcolor: "#F6F5F2",
+        accent: {
+          DEFAULT: '#04293A',
+          nover: '#041C32'
+        }
+      }
+    },
   },
   plugins: [require('daisyui'),],
   daisyui: {

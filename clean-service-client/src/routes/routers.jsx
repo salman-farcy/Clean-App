@@ -2,6 +2,11 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import Home from "../pages/Home";
 import About from "../pages/About";
+import Login from "../pages/Login";
+import SingUp from "../pages/SingUp";
+import Contact from "../pages/Contact";
+import AdminLayout from "../layouts/AdminLayout";
+import AddServices from "../pages/adminPages/AddServices";
 
 
 
@@ -18,8 +23,24 @@ const routers = createBrowserRouter([
             path: '/about',
             element: <About />
          },
+         {
+            path: '/contact',
+            element: <Contact />
+         },
       ]
    },
+   {path:"/login",  element: <Login /> },
+   {path: "/singup", element: <SingUp />},
+   {
+      path: "/admin",
+      element: <AdminLayout />,
+      children: [
+         {
+            path: 'addservice',
+            element: <AddServices />
+         }
+      ]
+   }
 ])
 
 export default routers;
