@@ -1,7 +1,5 @@
 import PropTypes from "prop-types";
-// import { NavLink } from "react-router-dom";
 import NavLinks from "../components/navlinks/NavLinks";
-import NavLInksMobile from "../components/navlinks/NavLInksMobile";
 import Container from "../components/ui/Container";
 
 const MainLayouts = ({ children }) => {
@@ -38,8 +36,12 @@ const MainLayouts = ({ children }) => {
               Cleen App
             </div>
 
-            {/* NavLink */}
-            <NavLinks />
+            <div className="hidden flex-none lg:block">
+              <div className="flex items-center gap-10 font-bold ">
+                {/* nav manu link  hear*/}
+                <NavLinks />
+              </div>
+            </div>
           </Container>
         </div>
 
@@ -53,8 +55,13 @@ const MainLayouts = ({ children }) => {
           className="drawer-overlay"
         ></label>
 
-        {/* NaVlinks Mobile */}
-        <NavLInksMobile />
+        <div className="menu bg-base-200 min-h-full w-96 p-4">
+          {/* Sidebar content here */}
+          <div className="flex flex-col items-center gap-5 font-bold">
+            {/* Navbar menu content here */}
+            <NavLinks />
+          </div>
+        </div>
       </div>
     </div>
   );

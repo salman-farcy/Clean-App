@@ -7,6 +7,7 @@ import SingUp from "../pages/SingUp";
 import Contact from "../pages/Contact";
 import AdminLayout from "../layouts/AdminLayout";
 import AddServices from "../pages/adminPages/AddServices";
+import PrivateRoute from "./PrivateRoute";
 
 
 
@@ -25,7 +26,7 @@ const routers = createBrowserRouter([
          },
          {
             path: '/contact',
-            element: <Contact />
+            element: <PrivateRoute> <Contact /> </PrivateRoute> 
          },
       ]
    },
