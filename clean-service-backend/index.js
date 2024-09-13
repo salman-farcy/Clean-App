@@ -23,6 +23,11 @@ const client = new MongoClient(uri, {
      const ServicesCollection = client.db('Clean-App').collection('Services')
 
 
+     app.get('/Api/v1/services',async (req, res) => {
+      const cursor = ServicesCollection.find()
+      const result = await cursor.toArray()
+       res.send(result)
+    })
      // Send a ping to confirm a successful connection
      await client.db("admin").command({ ping: 1 });
      console.log("Pinged your deployment. You successfully connected to MongoDB!");
@@ -38,9 +43,7 @@ app.get('/', (req, res) => {
   res.send('Hello Clean App User')
 })
 
-app.get('/Api/v1/services', (req, res) => {
-   res.send("it is working")
-})
+
 
 app.listen(port, () => {
   console.log(`Clean App Server is listening on prot ${port}`)
