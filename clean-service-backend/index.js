@@ -24,6 +24,15 @@ async function run() {
     // Connect the client to the server	(optional starting in v4.7)
     await client.connect();
 
+    const servicesCollection = client.db("Clean-App").collection("Services");
+    const bookingCollection = client.db("Clean-App").collection("Bookings");
+
+    app.get("/Api/v1/services", async (req, res) => {
+      const cursor = servicesCollection.find();
+      const result = await cursor.toArray();
+      res.send(result);
+    });
+
     
 
 
